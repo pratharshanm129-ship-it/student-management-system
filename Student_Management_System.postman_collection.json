@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "c1f7a080-88b6-4b2a-9e12-888888888888",
+		"name": "Student Management System API",
+		"description": "Postman Collection for Django REST Framework Student Management CRUD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. List All Students (Read All)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""]
+				}
+			}
+		},
+		{
+			"name": "2. Search Students by Term",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/?search=Arun",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""],
+					"query": [
+						{
+							"key": "search",
+							"value": "Arun"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "3. Create Student (Create)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Suresh Raina\",\n    \"register_number\": \"927621104005\",\n    \"email\": \"suresh.r@college.edu\",\n    \"phone\": \"9876543214\",\n    \"department\": \"CSE\",\n    \"year\": 3,\n    \"cgpa\": \"8.90\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""]
+				}
+			}
+		},
+		{
+			"name": "4. Get Single Student Detail (Read One)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/1/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", "1", ""]
+				}
+			}
+		},
+		{
+			"name": "5. Update Student (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Arun Kumar\",\n    \"register_number\": \"927621104001\",\n    \"email\": \"arun.k@college.edu\",\n    \"phone\": \"9876543210\",\n    \"department\": \"CSE\",\n    \"year\": 4,\n    \"cgpa\": \"9.10\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/1/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", "1", ""]
+				}
+			}
+		},
+		{
+			"name": "6. Delete Student (Delete)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/1/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", "1", ""]
+				}
+			}
+		}
+	]
+}
