@@ -201,3 +201,13 @@ python manage.py test
 - Pagination support for handling large datasets.
 - Export student lists to CSV / PDF format.
 - Role-based user authentication for admin and faculty access.
+
+**## Repository**
+
+GitHub Repository:
+
+https://github.com/pratharshanm129-ship-it/student-management-system
+
+**## Project Status**
+
+The project is developed as a complete CRUD-based web application for academic submission and demonstration.
