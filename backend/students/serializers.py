@@ -20,4 +20,12 @@ class StudentSerializer(serializers.ModelSerializer):
     def validate_name(self, value):
         if not value.strip():
             raise serializers.ValidationError("Name cannot be empty.")
-        return value
+        return value.strip()
+
+    def validate_register_number(self, value):
+        if not value.strip():
+            raise serializers.ValidationError("Register number cannot be empty.")
+        if not re.match(r'^[a-zA-Z0-9]+$', value):
+            raise serializers.ValidationError("Register number must be alphanumeric.")
+        return value.strip()
+

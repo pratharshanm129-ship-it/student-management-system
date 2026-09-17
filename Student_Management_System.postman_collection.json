@@ -113,6 +113,89 @@
 					"path": ["api", "students", "1", ""]
 				}
 			}
+		},
+		{
+			"name": "7. Negative Test - Invalid Email Format (400)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test Student\",\n    \"register_number\": \"927621104099\",\n    \"email\": \"invalid-email-format\",\n    \"phone\": \"9876543210\",\n    \"department\": \"CSE\",\n    \"year\": 1,\n    \"cgpa\": \"8.00\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""]
+				}
+			}
+		},
+		{
+			"name": "8. Negative Test - Duplicate Register Number (400)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Duplicate Reg Student\",\n    \"register_number\": \"927621104001\",\n    \"email\": \"unique.email@college.edu\",\n    \"phone\": \"9876543210\",\n    \"department\": \"ECE\",\n    \"year\": 2,\n    \"cgpa\": \"7.50\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""]
+				}
+			}
+		},
+		{
+			"name": "9. Negative Test - Duplicate Email (400)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Duplicate Email Student\",\n    \"register_number\": \"927621104998\",\n    \"email\": \"arun.k@college.edu\",\n    \"phone\": \"9876543210\",\n    \"department\": \"IT\",\n    \"year\": 3,\n    \"cgpa\": \"8.20\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", ""]
+				}
+			}
+		},
+		{
+			"name": "10. Negative Test - Invalid Student ID (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/99999/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "students", "99999", ""]
+				}
+			}
 		}
 	]
 }
